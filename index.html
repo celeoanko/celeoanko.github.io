@@ -1,0 +1,1210 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影像力_内容社区|品质原创视频品牌</title>
+<meta name="description" content="影像力是聚焦真实表达与创意内容的视频品牌官网，为创作者与观众搭建高品质内容生态，呈现多元故事与持续生长的社区活力。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff5a36'/%3E%3Cpath d='M12 9l12 7-12 7z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --yxl-bg:#0f1117;
+  --yxl-panel:#181b24;
+  --yxl-panel-2:#1f2431;
+  --yxl-line:rgba(255,255,255,.09);
+  --yxl-text:#e8eaf0;
+  --yxl-muted:#98a0b3;
+  --yxl-accent:#ff5a36;
+  --yxl-accent-2:#ffd447;
+  --yxl-cyan:#3dd6c2;
+  --yxl-radius:16px;
+  --yxl-sticky-h:104px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--yxl-sticky-h)}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--yxl-bg);
+  color:var(--yxl-text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+.yxl-wrap{width:min(1180px,92%);margin:0 auto}
+.yxl-sticky{position:sticky;top:0;z-index:80}
+
+/* 公告条 */
+.yxl-announce{
+  background:linear-gradient(90deg,#ff5a36,#ff8a3d 55%,#ffd447);
+  color:#20130a;
+  font-size:13.5px;
+  font-weight:600;
+  letter-spacing:.2px;
+}
+.yxl-announce-inner{
+  display:flex;align-items:center;gap:12px;
+  padding:8px 0;overflow:hidden;white-space:nowrap;
+}
+.yxl-announce-tag{
+  flex:0 0 auto;background:#20130a;color:#ffd447;
+  padding:1px 9px;border-radius:20px;font-size:11.5px;letter-spacing:1px;
+}
+.yxl-announce-track{
+  flex:1 1 auto;overflow:hidden;position:relative;height:22px;
+}
+.yxl-announce-item{
+  position:absolute;inset:0;display:flex;align-items:center;gap:8px;
+  opacity:0;transform:translateY(8px);transition:.45s;
+}
+.yxl-announce-item.is-on{opacity:1;transform:translateY(0)}
+.yxl-announce-item b{font-weight:800}
+
+/* 页头 */
+.yxl-header{
+  background:rgba(15,17,23,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--yxl-line);
+}
+.yxl-header-inner{
+  display:flex;align-items:center;gap:22px;padding:14px 0;flex-wrap:wrap;
+}
+.yxl-logo{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.yxl-logo-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(140deg,var(--yxl-accent),#ff9b3d);
+  display:grid;place-items:center;font-weight:900;font-size:18px;color:#1a0d06;
+  box-shadow:0 6px 18px rgba(255,90,54,.35);
+}
+.yxl-logo-text{font-size:19px;font-weight:800;letter-spacing:.5px}
+.yxl-logo-text small{display:block;font-size:10.5px;font-weight:500;color:var(--yxl-muted);letter-spacing:2.5px;margin-top:-4px}
+.yxl-nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:6px}
+.yxl-nav a{
+  font-size:14px;padding:7px 12px;border-radius:9px;color:var(--yxl-muted);
+  transition:.2s;font-weight:500;
+}
+.yxl-nav a:hover,.yxl-nav a.is-active{color:#fff;background:var(--yxl-panel-2)}
+.yxl-header-tools{display:flex;align-items:center;gap:10px;margin-left:auto}
+.yxl-search{
+  display:flex;align-items:center;gap:6px;background:var(--yxl-panel-2);
+  border:1px solid var(--yxl-line);border-radius:10px;padding:6px 10px;
+  transition:.2s;
+}
+.yxl-search:focus-within{border-color:var(--yxl-accent)}
+.yxl-search input{
+  background:none;border:none;outline:none;color:var(--yxl-text);
+  font-size:13.5px;width:120px;
+}
+.yxl-search input::placeholder{color:#6d768a}
+.yxl-search button{color:var(--yxl-muted);font-size:15px;padding:0 2px}
+.yxl-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  padding:9px 18px;border-radius:10px;font-size:14px;font-weight:700;
+  transition:.2s;white-space:nowrap;
+}
+.yxl-btn-primary{background:var(--yxl-accent);color:#1a0d06;box-shadow:0 8px 22px rgba(255,90,54,.3)}
+.yxl-btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(255,90,54,.42)}
+.yxl-btn-ghost{border:1px solid var(--yxl-line);color:var(--yxl-text);background:var(--yxl-panel)}
+.yxl-btn-ghost:hover{border-color:var(--yxl-accent);color:var(--yxl-accent)}
+.yxl-menu-toggle{
+  display:none;width:40px;height:40px;border-radius:10px;
+  background:var(--yxl-panel-2);border:1px solid var(--yxl-line);
+  align-items:center;justify-content:center;flex-direction:column;gap:4px;
+}
+.yxl-menu-toggle span{display:block;width:17px;height:2px;background:var(--yxl-text);border-radius:2px;transition:.2s}
+.yxl-mobile-nav{display:none;padding:10px 0 16px;border-top:1px solid var(--yxl-line)}
+.yxl-mobile-nav.is-open{display:block}
+.yxl-mobile-nav a{display:block;padding:11px 6px;color:var(--yxl-muted);font-size:15px;border-bottom:1px solid var(--yxl-line)}
+.yxl-mobile-nav a:last-child{border-bottom:none}
+
+/* 首屏 */
+.yxl-hero{position:relative;padding:66px 0 70px;overflow:hidden}
+.yxl-hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(720px 420px at 82% 12%,rgba(255,90,54,.18),transparent 62%),
+    radial-gradient(600px 480px at 8% 88%,rgba(61,214,194,.13),transparent 60%);
+  pointer-events:none;
+}
+.yxl-hero-grid{
+  position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;
+}
+.yxl-kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;
+  letter-spacing:2px;color:var(--yxl-accent-2);background:rgba(255,212,71,.1);
+  border:1px solid rgba(255,212,71,.28);padding:5px 13px;border-radius:20px;margin-bottom:20px;
+}
+.yxl-hero h1{font-size:clamp(34px,4.6vw,56px);line-height:1.12;letter-spacing:-.5px;font-weight:900}
+.yxl-hero h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--yxl-accent),var(--yxl-accent-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.yxl-hero-sub{font-size:17px;color:var(--yxl-muted);margin-top:18px;max-width:520px}
+.yxl-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.yxl-hero-note{margin-top:22px;font-size:13px;color:#7e8699;display:flex;align-items:center;gap:8px}
+.yxl-hero-note .dot{width:6px;height:6px;border-radius:50%;background:var(--yxl-cyan);box-shadow:0 0 0 4px rgba(61,214,194,.16)}
+.yxl-hero-visual{position:relative}
+.yxl-hero-cover{
+  border-radius:20px;overflow:hidden;border:1px solid var(--yxl-line);
+  box-shadow:0 30px 70px rgba(0,0,0,.55);position:relative;
+}
+.yxl-hero-cover img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.yxl-play-badge{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:72px;height:72px;border-radius:50%;background:rgba(255,90,54,.92);
+  display:grid;place-items:center;box-shadow:0 0 0 12px rgba(255,90,54,.16);
+  transition:.25s;
+}
+.yxl-hero-cover:hover .yxl-play-badge{transform:translate(-50%,-50%) scale(1.08)}
+.yxl-play-badge::after{
+  content:"";width:0;height:0;border-left:19px solid #1a0d06;
+  border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px;
+}
+.yxl-hero-pills{position:absolute;left:16px;bottom:16px;display:flex;gap:8px;flex-wrap:wrap}
+.yxl-pill{
+  font-size:11.5px;font-weight:700;padding:4px 11px;border-radius:20px;
+  background:rgba(15,17,23,.72);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);
+}
+.yxl-hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;
+}
+.yxl-stat{
+  background:var(--yxl-panel);border:1px solid var(--yxl-line);border-radius:var(--yxl-radius);
+  padding:16px 18px;
+}
+.yxl-stat b{display:block;font-size:26px;font-weight:900;letter-spacing:-.5px;color:#fff}
+.yxl-stat span{font-size:12.5px;color:var(--yxl-muted)}
+
+/* 通用区域 */
+.yxl-section{padding:72px 0}
+.yxl-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+.yxl-section-head h2{font-size:clamp(24px,3vw,33px);font-weight:900;letter-spacing:-.4px}
+.yxl-section-head h2 i{
+  font-style:normal;color:var(--yxl-accent);margin-right:10px;font-size:.72em;vertical-align:2px;
+}
+.yxl-section-head p{color:var(--yxl-muted);font-size:14.5px;max-width:560px;margin-top:8px}
+.yxl-link-more{font-size:13.5px;font-weight:700;color:var(--yxl-accent);white-space:nowrap}
+.yxl-link-more:hover{text-decoration:underline}
+
+/* 关于/品牌解析 */
+.yxl-about{
+  background:var(--yxl-panel);border:1px solid var(--yxl-line);
+  border-radius:22px;padding:46px;position:relative;overflow:hidden;
+}
+.yxl-about::after{
+  content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;
+  border-radius:50%;background:radial-gradient(circle,rgba(255,90,54,.2),transparent 68%);
+}
+.yxl-about h2{font-size:clamp(23px,2.7vw,30px);font-weight:900;margin-bottom:18px}
+.yxl-about p{color:#b7bdcb;font-size:15px;margin-bottom:14px;max-width:960px}
+.yxl-about p strong{color:var(--yxl-accent-2);font-weight:700}
+.yxl-about-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px;position:relative;z-index:2}
+.yxl-about-tags span{
+  font-size:12.5px;padding:5px 13px;border-radius:20px;background:var(--yxl-panel-2);
+  border:1px solid var(--yxl-line);color:var(--yxl-muted);font-weight:600;
+}
+
+/* 焦点视频 */
+.yxl-feature-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:20px}
+.yxl-video-card{
+  background:var(--yxl-panel);border:1px solid var(--yxl-line);border-radius:var(--yxl-radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:.24s;position:relative;
+}
+.yxl-video-card:hover{transform:translateY(-5px);border-color:rgba(255,90,54,.5);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.yxl-video-thumb{position:relative;overflow:hidden;background:#0a0c11}
+.yxl-video-thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:.4s}
+.yxl-video-card:hover .yxl-video-thumb img{transform:scale(1.04)}
+.yxl-thumb-mask{
+  position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.62));
+}
+.yxl-thumb-tag{
+  position:absolute;left:12px;top:12px;font-size:11px;font-weight:800;
+  background:var(--yxl-accent);color:#1a0d06;padding:3px 10px;border-radius:6px;letter-spacing:.5px;
+}
+.yxl-thumb-dur{
+  position:absolute;right:12px;bottom:12px;font-size:11.5px;font-weight:700;
+  background:rgba(0,0,0,.68);padding:2px 8px;border-radius:5px;color:#e8eaf0;
+}
+.yxl-thumb-play{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:48px;height:48px;border-radius:50%;background:rgba(255,90,54,.9);
+  display:grid;place-items:center;opacity:0;transition:.24s;
+}
+.yxl-video-card:hover .yxl-thumb-play{opacity:1}
+.yxl-thumb-play::after{
+  content:"";width:0;height:0;border-left:13px solid #1a0d06;
+  border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px;
+}
+.yxl-video-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.yxl-video-body h3{font-size:17px;font-weight:800;line-height:1.45}
+.yxl-video-body h3 a:hover{color:var(--yxl-accent)}
+.yxl-video-desc{font-size:13.5px;color:var(--yxl-muted);line-height:1.68;flex:1}
+.yxl-video-meta{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding-top:12px;border-top:1px solid var(--yxl-line);font-size:12.5px;color:var(--yxl-muted);
+}
+.yxl-author{display:flex;align-items:center;gap:8px;font-weight:600;color:#cbd1de}
+.yxl-avatar{
+  width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  font-size:12px;font-weight:900;color:#1a0d06;flex:0 0 auto;
+}
+.yxl-actions{display:flex;gap:12px;align-items:center}
+.yxl-act{
+  display:inline-flex;align-items:center;gap:4px;font-size:12.5px;color:var(--yxl-muted);
+  transition:.18s;font-weight:600;
+}
+.yxl-act:hover{color:var(--yxl-accent)}
+.yxl-act.is-liked{color:var(--yxl-accent)}
+.yxl-act.is-saved{color:var(--yxl-accent-2)}
+.yxl-feature-side{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.yxl-video-card.is-small .yxl-video-body{padding:13px 14px 15px}
+.yxl-video-card.is-small h3{font-size:14.5px}
+.yxl-video-card.is-small .yxl-video-desc{display:none}
+.yxl-video-card.is-small .yxl-video-meta{font-size:11.5px;padding-top:9px}
+
+/* 专题 */
+.yxl-topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.yxl-topic{
+  border-radius:var(--yxl-radius);overflow:hidden;position:relative;
+  min-height:290px;display:flex;align-items:flex-end;
+  border:1px solid var(--yxl-line);transition:.26s;
+}
+.yxl-topic:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(0,0,0,.5)}
+.yxl-topic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.yxl-topic::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,12,17,.05) 20%,rgba(10,12,17,.9));
+}
+.yxl-topic-inner{position:relative;z-index:2;padding:22px}
+.yxl-topic-status{
+  display:inline-block;font-size:11px;font-weight:800;letter-spacing:.5px;
+  padding:3px 10px;border-radius:6px;margin-bottom:12px;
+}
+.yxl-status-live{background:var(--yxl-accent);color:#1a0d06}
+.yxl-status-soon{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.yxl-topic h3{font-size:19px;font-weight:900;margin-bottom:7px}
+.yxl-topic p{font-size:13px;color:#b4bcca;line-height:1.6}
+.yxl-topic-meta{margin-top:13px;font-size:12px;color:#8a93a6;display:flex;gap:14px}
+
+/* 创作者 */
+.yxl-creators{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.yxl-creator{
+  background:var(--yxl-panel);border:1px solid var(--yxl-line);border-radius:var(--yxl-radius);
+  padding:24px 20px;text-align:center;transition:.24s;
+}
+.yxl-creator:hover{transform:translateY(-4px);border-color:rgba(255,90,54,.5)}
+.yxl-creator-avatar{
+  width:66px;height:66px;border-radius:50%;margin:0 auto 14px;
+  display:grid;place-items:center;font-size:25px;font-weight:900;color:#1a0d06;
+}
+.yxl-creator h3{font-size:16px;font-weight:800}
+.yxl-creator .field{font-size:12px;color:var(--yxl-accent-2);margin:3px 0 10px;font-weight:700}
+.yxl-creator p{font-size:12.5px;color:var(--yxl-muted);line-height:1.62;min-height:58px}
+.yxl-creator-stats{display:flex;justify-content:center;gap:16px;margin-top:12px;font-size:12px;color:#8a93a6}
+.yxl-creator-stats b{display:block;color:#fff;font-size:14.5px}
+
+/* 评价 */
+.yxl-reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.yxl-review{
+  background:var(--yxl-panel);border:1px solid var(--yxl-line);border-radius:var(--yxl-radius);
+  padding:22px;display:flex;flex-direction:column;gap:12px;
+}
+.yxl-review-stars{color:var(--yxl-accent-2);font-size:13px;letter-spacing:2px}
+.yxl-review p{font-size:13.5px;color:#b9c0ce;line-height:1.72;flex:1}
+.yxl-review-user{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--yxl-muted)}
+.yxl-review-user .yxl-avatar{width:30px;height:30px;font-size:12px}
+
+/* 灵感/贴士 */
+.yxl-ideas{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.yxl-idea{
+  background:linear-gradient(160deg,var(--yxl-panel-2),var(--yxl-panel));
+  border:1px solid var(--yxl-line);border-radius:var(--yxl-radius);padding:24px;
+  position:relative;overflow:hidden;transition:.24s;
+}
+.yxl-idea:hover{transform:translateY(-4px);border-color:rgba(61,214,194,.4)}
+.yxl-idea-icon{
+  width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
+  font-size:19px;margin-bottom:14px;
+}
+.yxl-idea h3{font-size:16px;font-weight:800;margin-bottom:8px}
+.yxl-idea p{font-size:13.5px;color:var(--yxl-muted);line-height:1.68}
+.yxl-idea .yxl-idea-tag{font-size:11.5px;color:var(--yxl-cyan);font-weight:700;margin-top:12px;display:block}
+
+/* 动态 */
+.yxl-news{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.yxl-news-item{
+  display:flex;gap:16px;background:var(--yxl-panel);border:1px solid var(--yxl-line);
+  border-radius:var(--yxl-radius);padding:18px 20px;transition:.22s;
+}
+.yxl-news-item:hover{border-color:rgba(255,90,54,.45)}
+.yxl-news-date{
+  flex:0 0 58px;text-align:center;border-right:1px solid var(--yxl-line);padding-right:14px;
+}
+.yxl-news-date b{display:block;font-size:21px;font-weight:900;color:var(--yxl-accent)}
+.yxl-news-date span{font-size:11.5px;color:var(--yxl-muted)}
+.yxl-news-body h3{font-size:15px;font-weight:800;margin-bottom:5px}
+.yxl-news-body p{font-size:13px;color:var(--yxl-muted);line-height:1.6}
+.yxl-news-body .yxl-news-tag{font-size:11.5px;color:var(--yxl-cyan);font-weight:700;margin-top:7px;display:inline-block}
+
+/* FAQ */
+.yxl-faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.yxl-faq details{
+  background:var(--yxl-panel);border:1px solid var(--yxl-line);
+  border-radius:12px;padding:15px 18px;transition:.2s;
+}
+.yxl-faq details[open]{border-color:rgba(255,90,54,.45);background:var(--yxl-panel-2)}
+.yxl-faq summary{
+  font-size:14.5px;font-weight:700;cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.yxl-faq summary::-webkit-details-marker{display:none}
+.yxl-faq summary::after{content:"+";color:var(--yxl-accent);font-size:18px;font-weight:400;transition:.2s}
+.yxl-faq details[open] summary::after{content:"–"}
+.yxl-faq p{font-size:13.5px;color:var(--yxl-muted);margin-top:11px;line-height:1.7}
+
+/* 联系 */
+.yxl-contact{
+  background:linear-gradient(135deg,rgba(255,90,54,.14),rgba(61,214,194,.1));
+  border:1px solid rgba(255,255,255,.12);border-radius:22px;
+  padding:48px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;
+}
+.yxl-contact h2{font-size:clamp(23px,2.7vw,31px);font-weight:900;margin-bottom:13px}
+.yxl-contact p{color:#c0c6d4;font-size:14.5px;max-width:480px}
+.yxl-contact-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.yxl-contact-info{display:flex;flex-direction:column;gap:12px;font-size:13.5px;color:#b4bcca}
+.yxl-contact-info div{display:flex;align-items:center;gap:10px}
+.yxl-contact-info b{color:#fff;font-weight:700}
+
+/* 页脚 */
+.yxl-footer{border-top:1px solid var(--yxl-line);padding:48px 0 30px;margin-top:20px}
+.yxl-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px}
+.yxl-footer h4{font-size:14px;font-weight:800;margin-bottom:14px;letter-spacing:.5px}
+.yxl-footer p,.yxl-footer a{font-size:13px;color:var(--yxl-muted);line-height:1.9}
+.yxl-footer a:hover{color:var(--yxl-accent)}
+.yxl-footer-brand p{margin-top:12px;max-width:300px}
+.yxl-footer-bottom{
+  margin-top:38px;padding-top:22px;border-top:1px solid var(--yxl-line);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:12.5px;color:#6d768a;
+}
+
+/* 回到顶部 */
+.yxl-top{
+  position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;
+  background:var(--yxl-accent);color:#1a0d06;display:grid;place-items:center;
+  font-size:19px;font-weight:900;box-shadow:0 10px 28px rgba(255,90,54,.4);
+  opacity:0;pointer-events:none;transition:.28s;z-index:70;border:none;cursor:pointer;
+}
+.yxl-top.is-on{opacity:1;pointer-events:auto}
+.yxl-top:hover{transform:translateY(-3px)}
+
+/* Toast & 弹窗 */
+.yxl-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:var(--yxl-panel-2);border:1px solid var(--yxl-line);color:#fff;
+  padding:11px 20px;border-radius:11px;font-size:13.5px;font-weight:600;
+  box-shadow:0 16px 40px rgba(0,0,0,.55);opacity:0;pointer-events:none;
+  transition:.28s;z-index:120;
+}
+.yxl-toast.is-show{opacity:1;transform:translate(-50%,0)}
+.yxl-modal-mask{
+  position:fixed;inset:0;background:rgba(6,8,12,.76);backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;padding:22px;
+  opacity:0;pointer-events:none;transition:.24s;z-index:110;
+}
+.yxl-modal-mask.is-on{opacity:1;pointer-events:auto}
+.yxl-modal{
+  background:var(--yxl-panel);border:1px solid var(--yxl-line);border-radius:18px;
+  width:min(480px,100%);padding:30px;transform:translateY(14px);transition:.24s;
+}
+.yxl-modal-mask.is-on .yxl-modal{transform:translateY(0)}
+.yxl-modal h3{font-size:18px;font-weight:900;margin-bottom:10px}
+.yxl-modal p{font-size:13.5px;color:var(--yxl-muted);line-height:1.72;margin-bottom:18px}
+.yxl-modal-actions{display:flex;gap:10px;justify-content:flex-end}
+
+/* 响应式 */
+@media(max-width:1000px){
+  :root{--yxl-sticky-h:96px}
+  .yxl-hero-grid{grid-template-columns:1fr;gap:38px}
+  .yxl-feature-grid{grid-template-columns:1fr}
+  .yxl-topic-grid{grid-template-columns:1fr 1fr}
+  .yxl-creators{grid-template-columns:1fr 1fr}
+  .yxl-contact{grid-template-columns:1fr;padding:34px}
+  .yxl-footer-grid{grid-template-columns:1fr 1fr}
+  .yxl-reviews{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  :root{--yxl-sticky-h:92px}
+  .yxl-nav{display:none}
+  .yxl-menu-toggle{display:flex}
+  .yxl-header-tools{margin-left:auto}
+  .yxl-search input{width:92px}
+  .yxl-section{padding:52px 0}
+  .yxl-hero{padding:44px 0 52px}
+  .yxl-feature-side{grid-template-columns:1fr}
+  .yxl-topic-grid,.yxl-creators,.yxl-reviews,.yxl-ideas,.yxl-news,.yxl-faq{grid-template-columns:1fr}
+  .yxl-about{padding:30px 22px}
+  .yxl-footer-grid{grid-template-columns:1fr}
+  .yxl-announce-track{height:auto}
+  .yxl-announce-inner{align-items:flex-start}
+  .yxl-news-item{flex-direction:row}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="yxl-sticky">
+  <div class="yxl-announce">
+    <div class="yxl-wrap yxl-announce-inner">
+      <span class="yxl-announce-tag">官方发布</span>
+      <div class="yxl-announce-track" id="yxlAnnounceTrack">
+        <div class="yxl-announce-item is-on"><b>11月19日</b>「声画现场」第二季上线，新增 12 支城市纪录短片</div>
+        <div class="yxl-announce-item"><b>11月18日</b>2026 年度创作者招募开启，开放 80 个官方认证席位</div>
+        <div class="yxl-announce-item"><b>11月17日</b>品牌官网内容库完成高清化升级，支持多端同步收藏</div>
+      </div>
+    </div>
+  </div>
+
+  <header class="yxl-header">
+    <div class="yxl-wrap yxl-header-inner">
+      <a href="#yxlTop" class="yxl-logo">
+        <span class="yxl-logo-mark">影</span>
+        <span class="yxl-logo-text">影像力<small>YINGXIANGLI</small></span>
+      </a>
+      <nav class="yxl-nav" aria-label="主导航">
+        <a href="#yxlTop" class="is-active">首页</a>
+        <a href="#yxlFeature">焦点视频</a>
+        <a href="#yxlTopics">专题企划</a>
+        <a href="#yxlCreators">创作者</a>
+        <a href="#yxlNews">企业动态</a>
+        <a href="#yxlFaq">帮助</a>
+        <a href="#yxlContact">联系</a>
+      </nav>
+      <div class="yxl-header-tools">
+        <form class="yxl-search" id="yxlSearchForm" onsubmit="return false;">
+          <input type="text" id="yxlSearchInput" placeholder="搜索视频 / 作者" aria-label="站内搜索">
+          <button type="submit" id="yxlSearchBtn" aria-label="搜索">⌕</button>
+        </form>
+        <a href="#yxlContact" class="yxl-btn yxl-btn-primary">投稿合作</a>
+        <button class="yxl-menu-toggle" id="yxlMenuToggle" aria-label="展开导航" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="yxl-mobile-nav" id="yxlMobileNav">
+      <div class="yxl-wrap">
+        <a href="#yxlTop">首页</a>
+        <a href="#yxlFeature">焦点视频</a>
+        <a href="#yxlTopics">专题企划</a>
+        <a href="#yxlCreators">创作者</a>
+        <a href="#yxlNews">企业动态</a>
+        <a href="#yxlFaq">帮助</a>
+        <a href="#yxlContact">联系</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="yxlTop">
+
+  <!-- 首屏 -->
+  <section class="yxl-hero">
+    <div class="yxl-wrap yxl-hero-grid">
+      <div>
+        <span class="yxl-kicker">影像力 · 官方网站</span>
+        <h1>影像力<em>啊啊啊操死我啊在线看</em></h1>
+        <p class="yxl-hero-sub">一个以真实表达为底色的原创视频品牌。我们用镜头记录城市与日常，用内容连接创作者与观众，让每一段影像都拥有被看见的力量。</p>
+        <div class="yxl-hero-actions">
+          <a href="#yxlFeature" class="yxl-btn yxl-btn-primary">进入焦点内容</a>
+          <a href="#yxlCreators" class="yxl-btn yxl-btn-ghost">认识创作者</a>
+        </div>
+        <div class="yxl-hero-note">
+          <span class="dot"></span>品牌官网持续运营中 · 每周更新原创高清内容
+        </div>
+      </div>
+      <div class="yxl-hero-visual">
+        <div class="yxl-hero-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23181b24'/%3E%3Cstop offset='1' stop-color='%232a1d18'/%3E%3C/linearGradient%3E%3CradialGradient id='g1' cx='.3' cy='.35' r='.5'%3E%3Cstop offset='0' stop-color='%23ff5a36' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%23ff5a36' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='g2' cx='.78' cy='.7' r='.45'%3E%3Cstop offset='0' stop-color='%233dd6c2' stop-opacity='.4'/%3E%3Cstop offset='1' stop-color='%233dd6c2' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='800' height='500' fill='url(%23bg)'/%3E%3Crect width='800' height='500' fill='url(%23g1)'/%3E%3Crect width='800' height='500' fill='url(%23g2)'/%3E%3Cg stroke='%23ffffff' stroke-opacity='.08'%3E%3Cpath d='M0 130h800M0 250h800M0 370h800'/%3E%3Cpath d='M180 0v500M400 0v500M620 0v500'/%3E%3C/g%3E%3Ccircle cx='400' cy='250' r='98' fill='none' stroke='%23ff5a36' stroke-opacity='.55' stroke-width='2'/%3E%3Ccircle cx='400' cy='250' r='132' fill='none' stroke='%23ffd447' stroke-opacity='.22' stroke-width='1'/%3E%3Cpath d='M375 205l62 45-62 45z' fill='%23ff5a36'/%3E%3Crect x='26' y='26' width='132' height='30' rx='7' fill='%23ff5a36'/%3E%3Ctext x='42' y='46' font-family='Arial' font-size='14' font-weight='bold' fill='%231a0d06'%3EORIGINAL%3C/text%3E%3Ctext x='400' y='446' text-anchor='middle' font-family='Arial' font-size='17' fill='%23ffffff' fill-opacity='.7'%3E影像力 · 声画现场%3C/text%3E%3C/svg%3E" alt="影像力品牌首屏主视觉：声画现场主题封面">
+          <span class="yxl-play-badge" aria-hidden="true"></span>
+          <div class="yxl-hero-pills">
+            <span class="yxl-pill">品牌短片</span>
+            <span class="yxl-pill">高清画质</span>
+            <span class="yxl-pill">原创首发</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="yxl-wrap">
+      <div class="yxl-hero-stats">
+        <div class="yxl-stat"><b data-count="1286">0</b><span>原创视频作品</span></div>
+        <div class="yxl-stat"><b data-count="312">0</b><span>认证创作者</span></div>
+        <div class="yxl-stat"><b data-count="47">0</b><span>城市影像专题</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品牌解析 -->
+  <section class="yxl-section" id="yxlAbout">
+    <div class="yxl-wrap">
+      <div class="yxl-about">
+        <h2>关于影像力：一个值得信赖的原创视频品牌</h2>
+        <p>影像力是一家深耕视频内容领域的<strong>官方网站</strong>品牌，我们以“真实、专业、有温度”为内容准则，围绕城市纪录、人物访谈、生活方式与创作幕后四大方向，持续产出高品质原创影像。作为企业级内容平台，我们不仅为观众提供精选内容，也为创作者提供从选题策划、拍摄支持到分发推广的全链路服务，让好内容拥有更长久的生命力。</p>
+        <p>在过去数年的持续运营中，影像力始终把<strong>用户至上</strong>放在第一位：我们坚持正版授权与高清标准，建立了严格的内容审核与品质把控流程；我们相信口碑来自每一次真实的点击与停留，因此不断优化观看体验、搜索效率与社区互动。品牌旗下“声画现场”“城市漫游者”“创作者的十二小时”等系列企划，已成长为具有行业影响力的内容 IP。</p>
+        <p>作为内容生态的长期建设者，影像力面向企业与创作者开放合作：品牌定制、联合出品、赛事征集与官方认证，均可在官网提交需求。我们期待与你一起，用影像记录真实的时代切片，用创意与匠心连接更多可能。</p>
+        <div class="yxl-about-tags">
+          <span>官方网站</span><span>企业级品牌</span><span>原创正版</span>
+          <span>高清内容</span><span>创作者社区</span><span>内容生态</span>
+          <span>行业领先</span><span>持续运营</span><span>值得信赖</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点视频 -->
+  <section class="yxl-section" id="yxlFeature">
+    <div class="yxl-wrap">
+      <div class="yxl-section-head">
+        <div>
+          <h2><i>01</i>焦点视频</h2>
+          <p>编辑部本周精选：从城市街角到幕后现场，六支值得完整看完的原创作品。</p>
+        </div>
+        <a href="#yxlTopics" class="yxl-link-more">查看全部专题 →</a>
+      </div>
+
+      <div class="yxl-feature-grid">
+        <article class="yxl-video-card">
+          <div class="yxl-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%230f1117'/%3E%3Cstop offset='1' stop-color='%231f2937'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23ff5a36' stop-opacity='.7'/%3E%3Cstop offset='1' stop-color='%23ffd447' stop-opacity='.2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23a)'/%3E%3Cpath d='M0 330l140-90 120 70 150-120 140 90 150-70 100 60v180H0z' fill='url(%23b)'/%3E%3Ccircle cx='646' cy='108' r='46' fill='%23ffd447' fill-opacity='.75'/%3E%3Cg fill='%23ffffff' fill-opacity='.5'%3E%3Ccircle cx='120' cy='90' r='2.5'/%3E%3Ccircle cx='220' cy='62' r='2'/%3E%3Ccircle cx='330' cy='106' r='2.5'/%3E%3Ccircle cx='480' cy='70' r='2'/%3E%3Ccircle cx='560' cy='130' r='2.5'/%3E%3C/g%3E%3C/svg%3E" alt="城市漫游者第一集：老街清晨的光影封面">
+            <div class="yxl-thumb-mask"></div>
+            <span class="yxl-thumb-tag">编辑精选</span>
+            <span class="yxl-thumb-dur">12:48</span>
+            <span class="yxl-thumb-play" aria-hidden="true"></span>
+          </div>
+          <div class="yxl-video-body">
+            <h3><a href="#yxlFeature">城市漫游者 · 第一集：老街清晨的五点半</a></h3>
+            <p class="yxl-video-desc">跟随本地摄影师走过三条老巷，记录早点摊开张前的那一小时。没有旁白，只有蒸汽、脚步和逐渐亮起来的天色。</p>
+            <div class="yxl-video-meta">
+              <span class="yxl-author"><span class="yxl-avatar" style="background:#ffd447">陈</span>陈拾光</span>
+              <div class="yxl-actions">
+                <button class="yxl-act" data-like aria-label="点赞">♡ <span data-like-num>2381</span></button>
+                <button class="yxl-act" data-save aria-label="收藏">☆ 收藏</button>
+                <button class="yxl-act" data-copy aria-label="复制链接">⧉ 链接</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="yxl-feature-side">
+          <article class="yxl-video-card is-small">
+            <div class="yxl-video-thumb">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23241b22'/%3E%3Ccircle cx='316' cy='58' r='42' fill='%23ff8a3d' fill-opacity='.65'/%3E%3Cpath d='M0 178l88-52 72 42 92-66 60 40 88-30v113H0z' fill='%233dd6c2' fill-opacity='.35'/%3E%3Crect x='20' y='20' width='58' height='20' rx='5' fill='%23ff5a36'/%3E%3C/svg%3E" alt="人物访谈：独立导演的十年封面">
+              <div class="yxl-thumb-mask"></div>
+              <span class="yxl-thumb-tag">访谈</span>
+              <span class="yxl-thumb-dur">08:12</span>
+            </div>
+            <div class="yxl-video-body">
+              <h3><a href="#yxlFeature">人物访谈：独立导演的十年与四个夏天</a></h3>
+              <div class="yxl-video-meta">
+                <span class="yxl-author"><span class="yxl-avatar" style="background:#3dd6c2">林</span>林一舟</span>
+                <div class="yxl-actions">
+                  <button class="yxl-act" data-like>♡ <span data-like-num>964</span></button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="yxl-video-card is-small">
+            <div class="yxl-video-thumb">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%231a2230'/%3E%3Cg stroke='%23ffd447' stroke-opacity='.5' fill='none'%3E%3Ccircle cx='200' cy='112' r='52'/%3E%3Ccircle cx='200' cy='112' r='78' stroke-opacity='.22'/%3E%3C/g%3E%3Cpath d='M182 88l40 24-40 24z' fill='%23ffd447'/%3E%3Crect x='20' y='20' width='46' height='20' rx='5' fill='%233dd6c2'/%3E%3C/svg%3E" alt="创作幕后：一支短片从脚本到成片的34小时封面">
+              <div class="yxl-thumb-mask"></div>
+              <span class="yxl-thumb-tag">幕后</span>
+              <span class="yxl-thumb-dur">16:30</span>
+            </div>
+            <div class="yxl-video-body">
+              <h3><a href="#yxlFeature">创作幕后：一支短片从脚本到成片的34小时</a></h3>
+              <div class="yxl-video-meta">
+                <span class="yxl-author"><span class="yxl-avatar" style="background:#ff8a3d">周</span>周末放映</span>
+                <div class="yxl-actions">
+                  <button class="yxl-act" data-like>♡ <span data-like-num>1577</span></button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="yxl-video-card is-small">
+            <div class="yxl-video-thumb">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23201a15'/%3E%3Cpath d='M0 190c60-46 92 10 148-24s88 22 144-16 108 8 108 8v67H0z' fill='%23ff5a36' fill-opacity='.45'/%3E%3Ccircle cx='96' cy='62' r='26' fill='%23ffd447' fill-opacity='.85'/%3E%3Cg stroke='%23ffffff' stroke-opacity='.25'%3E%3Cpath d='M0 96h400'/%3E%3C/g%3E%3Crect x='20' y='20' width='58' height='20' rx='5' fill='%23ff8a3d'/%3E%3C/svg%3E" alt="治愈影像：雨天咖啡馆的慢镜头封面">
+              <div class="yxl-thumb-mask"></div>
+              <span class="yxl-thumb-tag">治愈</span>
+              <span class="yxl-thumb-dur">05:06</span>
+            </div>
+            <div class="yxl-video-body">
+              <h3><a href="#yxlFeature">治愈影像：雨天咖啡馆的十二个慢镜头</a></h3>
+              <div class="yxl-video-meta">
+                <span class="yxl-author"><span class="yxl-avatar" style="background:#c9b6ff">苏</span>苏木木</span>
+                <div class="yxl-actions">
+                  <button class="yxl-act" data-like>♡ <span data-like-num>842</span></button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="yxl-video-card is-small">
+            <div class="yxl-video-thumb">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%2314181f'/%3E%3Cg fill='%233dd6c2' fill-opacity='.35'%3E%3Crect x='34' y='120' width='40' height='80'/%3E%3Crect x='92' y='88' width='40' height='112'/%3E%3Crect x='150' y='54' width='40' height='146'/%3E%3Crect x='208' y='98' width='40' height='102'/%3E%3Crect x='266' y='70' width='40' height='130'/%3E%3Crect x='324' y='112' width='40' height='88'/%3E%3C/g%3E%3Crect x='20' y='20' width='72' height='20' rx='5' fill='%23ff5a36'/%3E%3C/svg%3E" alt="数据背后：内容社区的一周观察封面">
+              <div class="yxl-thumb-mask"></div>
+              <span class="yxl-thumb-tag">观察</span>
+              <span class="yxl-thumb-dur">10:20</span>
+            </div>
+            <div class="yxl-video-body">
+              <h3><a href="#yxlFeature">数据背后：一个内容社区的一周观察</a></h3>
+              <div class="yxl-video-meta">
+                <span class="yxl-author"><span class="yxl-avatar" style="background:#9ae6b4">李</span>李知远</span>
+                <div class="yxl-actions">
+                  <button class="yxl-act" data-like>♡ <span data-like-num>612</span></button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="yxl-video-card is-small">
+            <div class="yxl-video-thumb">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23231c1a'/%3E%3Cpath d='M0 158l120-60 90 44 100-52 90 50v85H0z' fill='%23ffd447' fill-opacity='.3'/%3E%3Ccircle cx='312' cy='66' r='34' fill='%23ff5a36' fill-opacity='.75'/%3E%3Crect x='20' y='20' width='58' height='20' rx='5' fill='%23ffd447'/%3E%3C/svg%3E" alt="在地文化：一座小城的三种手艺封面">
+              <div class="yxl-thumb-mask"></div>
+              <span class="yxl-thumb-tag">文化</span>
+              <span class="yxl-thumb-dur">14:02</span>
+            </div>
+            <div class="yxl-video-body">
+              <h3><a href="#yxlFeature">在地文化：一座小城的三种老手艺</a></h3>
+              <div class="yxl-video-meta">
+                <span class="yxl-author"><span class="yxl-avatar" style="background:#f6ad55">吴</span>吴有光</span>
+                <div class="yxl-actions">
+                  <button class="yxl-act" data-like>♡ <span data-like-num>1103</span></button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题 -->
+  <section class="yxl-section" id="yxlTopics">
+    <div class="yxl-wrap">
+      <div class="yxl-section-head">
+        <div>
+          <h2><i>02</i>专题企划</h2>
+          <p>以长期主义做内容，影像力的专题企划持续追踪城市、人物与创作现场。</p>
+        </div>
+        <a href="#yxlContact" class="yxl-link-more">提交专题创意 →</a>
+      </div>
+      <div class="yxl-topic-grid">
+        <article class="yxl-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 620'%3E%3Cdefs%3E%3ClinearGradient id='t1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232a1a12'/%3E%3Cstop offset='1' stop-color='%23ff5a36' stop-opacity='.55'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='500' height='620' fill='url(%23t1)'/%3E%3Cg stroke='%23ffd447' stroke-opacity='.45' fill='none' stroke-width='2'%3E%3Cpath d='M60 470c90-120 200-160 380-120'/%3E%3Cpath d='M60 510c100-110 210-150 380-110'/%3E%3C/g%3E%3Ccircle cx='368' cy='176' r='58' fill='%23ffd447' fill-opacity='.5'/%3E%3Ctext x='42' y='88' font-family='Arial' font-size='19' font-weight='bold' fill='%23ffffff'%3ESOUND %26amp; CITY%3C/text%3E%3C/svg%3E" alt="专题声画现场第二季封面">
+          <div class="yxl-topic-inner">
+            <span class="yxl-topic-status yxl-status-live">更新中</span>
+            <h3>声画现场 · 第二季</h3>
+            <p>走进十二座城市的清晨与深夜，用环境声与长镜头拼出一张有温度的城市声音地图。</p>
+            <div class="yxl-topic-meta"><span>12 支短片</span><span>每周三更新</span></div>
+          </div>
+        </article>
+        <article class="yxl-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 620'%3E%3Cdefs%3E%3ClinearGradient id='t2' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%230d1a1c'/%3E%3Cstop offset='1' stop-color='%233dd6c2' stop-opacity='.45'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='500' height='620' fill='url(%23t2)'/%3E%3Cg fill='none' stroke='%233dd6c2' stroke-opacity='.6'%3E%3Ccircle cx='250' cy='330' r='94'/%3E%3Ccircle cx='250' cy='330' r='146' stroke-opacity='.3'/%3E%3Ccircle cx='250' cy='330' r='198' stroke-opacity='.15'/%3E%3C/g%3E%3Cpath d='M230 296l44 34-44 34z' fill='%233dd6c2'/%3E%3Ctext x='42' y='88' font-family='Arial' font-size='19' font-weight='bold' fill='%23ffffff'%3ECREATOR LAB%3C/text%3E%3C/svg%3E" alt="专题创作者的十二小时封面">
+          <div class="yxl-topic-inner">
+            <span class="yxl-topic-status yxl-status-live">更新中</span>
+            <h3>创作者的十二小时</h3>
+            <p>跟拍八位不同领域创作者的一天，从选题会到剪辑台，呈现真实而具体的创作日常。</p>
+            <div class="yxl-topic-meta"><span>8 期</span><span>每周五更新</span></div>
+          </div>
+        </article>
+        <article class="yxl-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 620'%3E%3Cdefs%3E%3ClinearGradient id='t3' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23221a2a'/%3E%3Cstop offset='1' stop-color='%23c9b6ff' stop-opacity='.4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='500' height='620' fill='url(%23t3)'/%3E%3Cg fill='%23ffffff' fill-opacity='.2'%3E%3Crect x='70' y='360' width='60' height='180' rx='6'/%3E%3Crect x='156' y='300' width='60' height='240' rx='6'/%3E%3Crect x='242' y='250' width='60' height='290' rx='6'/%3E%3Crect x='328' y='330' width='60' height='210' rx='6'/%3E%3C/g%3E%3Ccircle cx='250' cy='170' r='52' fill='%23c9b6ff' fill-opacity='.6'/%3E%3Ctext x='42' y='88' font-family='Arial' font-size='19' font-weight='bold' fill='%23ffffff'%3ENEW VOICES%3C/text%3E%3C/svg%3E" alt="专题新声计划第三期封面">
+          <div class="yxl-topic-inner">
+            <span class="yxl-topic-status yxl-status-soon">即将上线</span>
+            <h3>新声计划 · 第三期</h3>
+            <p>面向新锐创作者的扶持企划，提供拍摄基金、导师陪伴与官方推荐位，现已开放报名。</p>
+            <div class="yxl-topic-meta"><span>限额 30 位</span><span>12月报名</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者 -->
+  <section class="yxl-section" id="yxlCreators">
+    <div class="yxl-wrap">
+      <div class="yxl-section-head">
+        <div>
+          <h2><i>03</i>创作者矩阵</h2>
+          <p>他们来自不同城市与职业，用各自的方式讲述真实。影像力官方认证创作者持续招募中。</p>
+        </div>
+        <a href="#yxlContact" class="yxl-link-more">申请认证 →</a>
+      </div>
+      <div class="yxl-creators">
+        <article class="yxl-creator">
+          <div class="yxl-creator-avatar" style="background:#ffd447">陈</div>
+          <h3>陈拾光</h3>
+          <div class="field">城市纪录 · 街拍</div>
+          <p>用长镜头收集城市清晨的声音，擅长在平凡街景里找到叙事线索。</p>
+          <div class="yxl-creator-stats">
+            <span><b>86</b>作品</span><span><b>4.2万</b>关注</span>
+          </div>
+        </article>
+        <article class="yxl-creator">
+          <div class="yxl-creator-avatar" style="background:#3dd6c2">林</div>
+          <h3>林一舟</h3>
+          <div class="field">人物访谈 · 深度</div>
+          <p>十年媒体经验，访谈过上百位创作者，相信慢下来的对话更有力量。</p>
+          <div class="yxl-creator-stats">
+            <span><b>52</b>作品</span><span><b>3.6万</b>关注</span>
+          </div>
+        </article>
+        <article class="yxl-creator">
+          <div class="yxl-creator-avatar" style="background:#ff8a3d">周</div>
+          <h3>周末放映</h3>
+          <div class="field">幕后 · 教程干货</div>
+          <p>职业摄影指导，专注把复杂的拍摄流程拆成可复用的方法，乐于分享。</p>
+          <div class="yxl-creator-stats">
+            <span><b>74</b>作品</span><span><b>5.1万</b>关注</span>
+          </div>
+        </article>
+        <article class="yxl-creator">
+          <div class="yxl-creator-avatar" style="background:#c9b6ff">苏</div>
+          <h3>苏木木</h3>
+          <div class="field">生活方式 · 治愈</div>
+          <p>记录雨天、咖啡馆和慢下来的片刻，希望影像能让人松一口气。</p>
+          <div class="yxl-creator-stats">
+            <span><b>61</b>作品</span><span><b>2.9万</b>关注</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评价 -->
+  <section class="yxl-section" id="yxlReviews">
+    <div class="yxl-wrap">
+      <div class="yxl-section-head">
+        <div>
+          <h2><i>04</i>社区口碑</h2>
+          <p>来自观众与创作者的真实反馈，是我们持续打磨内容的动力。</p>
+        </div>
+      </div>
+      <div class="yxl-reviews">
+        <article class="yxl-review">
+          <div class="yxl-review-stars">★★★★★</div>
+          <p>“声画现场”是我每周三晚上的固定节目。影像力没有把城市拍成宣传片，那些环境声和空白留得很克制，反而更像真实生活。</p>
+          <div class="yxl-review-user"><span class="yxl-avatar" style="background:#ffd447">李</span>李女士 · 观众</div>
+        </article>
+        <article class="yxl-review">
+          <div class="yxl-review-stars">★★★★★</div>
+          <p>作为创作者，投稿流程比我想象中专业很多。编辑会给出具体的修改建议，而不是一句模糊的“再优化一下”。这点很难得。</p>
+          <div class="yxl-review-user"><span class="yxl-avatar" style="background:#3dd6c2">王</span>王同学 · 认证创作者</div>
+        </article>
+        <article class="yxl-review">
+          <div class="yxl-review-stars">★★★★☆</div>
+          <p>画质和加载都很稳，搜索也能按作者筛选。唯一的小建议是希望专题页加一个追更提醒，不然容易错过更新。</p>
+          <div class="yxl-review-user"><span class="yxl-avatar" style="background:#ff8a3d">赵</span>赵先生 · 资深用户</div>
+        </article>
+        <article class="yxl-review">
+          <div class="yxl-review-stars">★★★★★</div>
+          <p>我们品牌和影像力做过一次联名短片，从脚本到成片的沟通都很顺。他们对细节的坚持，确实能看出一个内容品牌的专业度。</p>
+          <div class="yxl-review-user"><span class="yxl-avatar" style="background:#c9b6ff">何</span>何经理 · 合作品牌</div>
+        </article>
+        <article class="yxl-review">
+          <div class="yxl-review-stars">★★★★★</div>
+          <p>喜欢这里的评论区，大家会认真讨论镜头和叙事，而不是只留一句“好看”。这种氛围在内容社区里挺难得的。</p>
+          <div class="yxl-review-user"><span class="yxl-avatar" style="background:#9ae6b4">陈</span>陈小姐 · 观众</div>
+        </article>
+        <article class="yxl-review">
+          <div class="yxl-review-stars">★★★★☆</div>
+          <p>创作者的幕后教程对我帮助很大，尤其是灯光和收音那两期，看完直接改了我下个项目的方案。希望多出实战类内容。</p>
+          <div class="yxl-review-user"><span class="yxl-avatar" style="background:#f6ad55">刘</span>刘先生 · 独立摄影师</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作灵感 -->
+  <section class="yxl-section" id="yxlIdeas">
+    <div class="yxl-wrap">
+      <div class="yxl-section-head">
+        <div>
+          <h2><i>05</i>创作灵感</h2>
+          <p>从选题到剪辑，影像力编辑部整理了可直接上手的创作思路，欢迎取用。</p>
+        </div>
+      </div>
+      <div class="yxl-ideas">
+        <article class="yxl-idea">
+          <div class="yxl-idea-icon" style="background:rgba(255,90,54,.18);color:#ff5a36">✎</div>
+          <h3>脚本灵感：从一件小事开始</h3>
+          <p>与其想一个宏大主题，不如先锁定一个具体动作：等一班车、开一扇窗。细节越具体，故事越容易成立。</p>
+          <span class="yxl-idea-tag"># 选题方法</span>
+        </article>
+        <article class="yxl-idea">
+          <div class="yxl-idea-icon" style="background:rgba(61,214,194,.16);color:#3dd6c2">◐</div>
+          <h3>剪辑思路：给观众留呼吸</h3>
+          <p>情绪段落之间留两秒空镜，比加十层转场更有效。声音是第一剪辑点，先听三遍素材再动手。</p>
+          <span class="yxl-idea-tag"># 剪辑技巧</span>
+        </article>
+        <article class="yxl-idea">
+          <div class="yxl-idea-icon" style="background:rgba(255,212,71,.16);color:#ffd447">◎</div>
+          <h3>标题建议：写清“谁在做什么”</h3>
+          <p>避免堆砌形容词。把主体、动作与场景写明白，标题自然具备信息量，也更容易被搜索到。</p>
+          <span class="yxl-idea-tag"># 内容运营</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 -->
+  <section class="yxl-section" id="yxlNews">
+    <div class="yxl-wrap">
+      <div class="yxl-section-head">
+        <div>
+          <h2><i>06</i>企业动态</h2>
+          <p>品牌官网持续更新内容计划、合作进展与社区活动，欢迎关注官方发布。</p>
+        </div>
+      </div>
+      <div class="yxl-news">
+        <article class="yxl-news-item">
+          <div class="yxl-news-date"><b>19</b><span>11月</span></div>
+          <div class="yxl-news-body">
+            <h3>「声画现场」第二季正式上线</h3>
+            <p>首周上线三座城市短片，同步开放观众投票，选出下一站拍摄城市。</p>
+            <span class="yxl-news-tag">官方发布</span>
+          </div>
+        </article>
+        <article class="yxl-news-item">
+          <div class="yxl-news-date"><b>18</b><span>11月</span></div>
+          <div class="yxl-news-body">
+            <h3>2026 年度创作者招募计划开启</h3>
+            <p>面向所有原创视频作者，提供拍摄基金、官方认证与专题推荐资源。</p>
+            <span class="yxl-news-tag">报名中</span>
+          </div>
+        </article>
+        <article class="yxl-news-item">
+          <div class="yxl-news-date"><b>17</b><span>11月</span></div>
+          <div class="yxl-news-body">
+            <h3>内容库高清化升级完成</h3>
+            <p>历史精品内容完成画质重制，支持多端同步收藏与清晰度切换。</p>
+            <span class="yxl-news-tag">产品更新</span>
+          </div>
+        </article>
+        <article class="yxl-news-item">
+          <div class="yxl-news-date"><b>14</b><span>11月</span></div>
+          <div class="yxl-news-body">
+            <h3>与三家城市文化机构达成合作</h3>
+            <p>围绕在地文化影像展开联合出品，首批合作短片将于下月与观众见面。</p>
+            <span class="yxl-news-tag">品牌合作</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="yxl-section" id="yxlFaq">
+    <div class="yxl-wrap">
+      <div class="yxl-section-head">
+        <div>
+          <h2><i>07</i>帮助中心</h2>
+          <p>关于内容、投稿与合作的常见问题，如未解答可在联系区留言。</p>
+        </div>
+      </div>
+      <div class="yxl-faq">
+        <details open>
+          <summary>如何成为影像力官方认证创作者？</summary>
+          <p>可在本页联系区提交申请，附上作品链接与创作方向说明。编辑团队会在五个工作日内回复，并根据内容完整度与更新频率进行评估。</p>
+        </details>
+        <details>
+          <summary>投稿作品的格式和时长有什么要求？</summary>
+          <p>建议提交 1080P 及以上画质，时长 3 至 30 分钟为佳。请保证素材为原创或已获得完整授权，涉及第三方音乐与影像需注明来源。</p>
+        </details>
+        <details>
+          <summary>品牌合作可以定制专题内容吗？</summary>
+          <p>可以。我们支持品牌短片、系列纪录片与联合企划等多种形式，从策划到分发全流程参与，具体方案可在联系区说明需求后详谈。</p>
+        </details>
+        <details>
+          <summary>收藏和点赞的功能如何使用？</summary>
+          <p>在视频卡片右下角可点赞与收藏，状态会实时变化。收藏内容与账号绑定，登录同一账号后可在多端同步查看。</p>
+        </details>
+        <details>
+          <summary>内容是否会持续更新？</summary>
+          <p>影像力官网持续运营中，焦点视频每周更新，专题企划按周更节奏推进，企业动态会第一时间在页面顶部公告条同步。</p>
+        </details>
+        <details>
+          <summary>如何反馈问题或举报内容？</summary>
+          <p>可点击页面右下角反馈入口，或在联系区留言。我们会在收到反馈后尽快核实，并对不符合社区规范的内容进行处理。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section class="yxl-section" id="yxlContact">
+    <div class="yxl-wrap">
+      <div class="yxl-contact">
+        <div>
+          <h2>投稿、合作与分享，从这里开始</h2>
+          <p>无论你是想投稿一支短片、申请创作者认证，还是希望与影像力展开品牌合作，都欢迎通过以下方式与我们取得联系。作为一个持续运营的原创视频品牌，我们认真对待每一份来信。</p>
+          <div class="yxl-contact-actions">
+            <button class="yxl-btn yxl-btn-primary" id="yxlSubmitBtn">我要投稿</button>
+            <button class="yxl-btn yxl-btn-ghost" id="yxlShareBtn">分享本页</button>
+            <button class="yxl-btn yxl-btn-ghost" id="yxlFeedbackBtn">反馈建议</button>
+          </div>
+        </div>
+        <div class="yxl-contact-info">
+          <div><b>合作邮箱</b> partner@yingxiangli.example</div>
+          <div><b>投稿通道</b> 官网联系区表单 · 工作日 24 小时内回复</div>
+          <div><b>办公地址</b> 城市影像中心 · 三层内容编辑部</div>
+          <div><b>社区公约</b> 尊重原创 · 友善表达 · 真实记录</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="yxl-footer">
+  <div class="yxl-wrap">
+    <div class="yxl-footer-grid">
+      <div class="yxl-footer-brand">
+        <div class="yxl-logo">
+          <span class="yxl-logo-mark">影</span>
+          <span class="yxl-logo-text">影像力<small>YINGXIANGLI</small></span>
+        </div>
+        <p>影像力官方网站 · 一个以原创视频为核心的品牌内容平台，持续深耕城市纪录与人物故事，用真实影像连接创作者与观众。</p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <a href="#yxlTop">首页</a><br>
+        <a href="#yxlFeature">焦点视频</a><br>
+        <a href="#yxlTopics">专题企划</a><br>
+        <a href="#yxlCreators">创作者</a>
+      </div>
+      <div>
+        <h4>关于我们</h4>
+        <a href="#yxlAbout">品牌故事</a><br>
+        <a href="#yxlNews">企业动态</a><br>
+        <a href="#yxlFaq">帮助中心</a><br>
+        <a href="#yxlContact">联系方式</a>
+      </div>
+      <div>
+        <h4>社区与规则</h4>
+        <a href="#yxlReviews">社区口碑</a><br>
+        <a href="#yxlIdeas">创作灵感</a><br>
+        <a href="#yxlFaq">投稿指南</a><br>
+        <a href="#yxlContact">品牌合作</a>
+      </div>
+    </div>
+    <div class="yxl-footer-bottom">
+      <span>© 2026 影像力 · 官方网站 版权所有</span>
+      <span>持续运营中 · 原创正版内容 · 高清品质呈现</span>
+      <span>内容社区 · 用户至上 · 值得信赖</span>
+    </div>
+  </div>
+</footer>
+
+<button class="yxl-top" id="yxlTopBtn" aria-label="回到顶部">↑</button>
+<div class="yxl-toast" id="yxlToast"></div>
+
+<div class="yxl-modal-mask" id="yxlModalMask">
+  <div class="yxl-modal" role="dialog" aria-modal="true" aria-labelledby="yxlModalTitle">
+    <h3 id="yxlModalTitle">提示</h3>
+    <p id="yxlModalText">内容加载中。</p>
+    <div class="yxl-modal-actions">
+      <button class="yxl-btn yxl-btn-ghost" id="yxlModalClose">关闭</button>
+      <button class="yxl-btn yxl-btn-primary" id="yxlModalOk">知道了</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var d = document;
+
+  /* 公告条轮播 */
+  var announceItems = d.querySelectorAll('.yxl-announce-item');
+  var announceIdx = 0;
+  if (announceItems.length > 1) {
+    setInterval(function(){
+      announceItems[announceIdx].classList.remove('is-on');
+      announceIdx = (announceIdx + 1) % announceItems.length;
+      announceItems[announceIdx].classList.add('is-on');
+    }, 4200);
+  }
+
+  /* 移动端导航 */
+  var menuToggle = d.getElementById('yxlMenuToggle');
+  var mobileNav = d.getElementById('yxlMobileNav');
+  menuToggle.addEventListener('click', function(){
+    var open = mobileNav.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobileNav.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* 导航高亮 */
+  var navLinks = d.querySelectorAll('.yxl-nav a');
+  var sections = [];
+  navLinks.forEach(function(link){
+    var id = link.getAttribute('href');
+    if (id && id.charAt(0) === '#') {
+      var el = d.querySelector(id);
+      if (el) sections.push({el: el, link: link});
+    }
+  });
+  window.addEventListener('scroll', function(){
+    var pos = window.scrollY + 140;
+    var current = null;
+    sections.forEach(function(s){
+      if (s.el.offsetTop <= pos) current = s;
+    });
+    if (current) {
+      navLinks.forEach(function(l){ l.classList.remove('is-active'); });
+      current.link.classList.add('is-active');
+    }
+    topBtn.classList.toggle('is-on', window.scrollY > 500);
+  });
+
+  /* 搜索反馈 */
+  var searchForm = d.getElementById('yxlSearchForm');
+  var searchInput = d.getElementById('yxlSearchInput');
+  function doSearch(){
+    var kw = searchInput.value.trim();
+    if (!kw) {
+      showToast('请输入视频标题或作者名称');
+      return;
+    }
+    showToast('正在为你检索「' + kw + '」相关原创内容');
+    searchInput.blur();
+  }
+  searchForm.addEventListener('submit', function(e){ e.preventDefault(); doSearch(); });
+  d.getElementById('yxlSearchBtn').addEventListener('click', function(e){ e.preventDefault(); doSearch(); });
+
+  /* Toast */
+  var toast = d.getElementById('yxlToast');
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('is-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('is-show'); }, 2200);
+  }
+
+  /* 弹窗 */
+  var modalMask = d.getElementById('yxlModalMask');
+  var modalTitle = d.getElementById('yxlModalTitle');
+  var modalText = d.getElementById('yxlModalText');
+  function openModal(title, text){
+    modalTitle.textContent = title;
+    modalText.textContent = text;
+    modalMask.classList.add('is-on');
+  }
+  function closeModal(){ modalMask.classList.remove('is-on'); }
+  d.getElementById('yxlModalClose').addEventListener('click', closeModal);
+  d.getElementById('yxlModalOk').addEventListener('click', closeModal);
+  modalMask.addEventListener('click', function(e){
+    if (e.target === modalMask) closeModal();
+  });
+
+  /* 点赞 / 收藏 */
+  d.querySelectorAll('[data-like]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var numEl = btn.querySelector('[data-like-num]');
+      var liked = btn.classList.toggle('is-liked');
+      if (numEl) {
+        var n = parseInt(numEl.textContent.replace(/,/g, ''), 10) || 0;
+        n = liked ? n + 1 : Math.max(0, n - 1);
+        numEl.textContent = n;
+      }
+      showToast(liked ? '已点赞，感谢你的支持' : '已取消点赞');
+    });
+  });
+  d.querySelectorAll('[data-save]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var saved = btn.classList.toggle('is-saved');
+      btn.innerHTML = saved ? '★ 已收藏' : '☆ 收藏';
+      showToast(saved ? '已收藏，可在账号内同步查看' : '已取消收藏');
+    });
+  });
+
+  /* 复制链接 */
+  d.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var link = window.location.origin + window.location.pathname + btn.getAttribute('data-copy') || '';
+      if (!link || link.indexOf('undefined') > -1) link = '影像力官方网站 · 焦点视频';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link).then(function(){
+          showToast('链接已复制，可分享给好友');
+        }).catch(function(){
+          showToast('复制失败，请手动分享');
+        });
+      } else {
+        showToast('已生成分享信息，可转发给好友');
+      }
+    });
+  });
+
+  /* 投稿 / 分享 / 反馈 */
+  d.getElementById('yxlSubmitBtn').addEventListener('click', function(){
+    openModal('投稿入口', '请准备作品链接、创作方向与 200 字以内的内容简介，通过官方合作邮箱提交。编辑团队会在五个工作日内给出反馈，感谢你对影像力原创内容的信任。');
+  });
+  d.getElementById('yxlShareBtn').addEventListener('click', function(){
+    openModal('分享本页', '你可以将影像力官网分享给好友，一起发现更多真实、专业的原创视频内容。分享时请保留品牌名称与出处。');
+  });
+  d.getElementById('yxlFeedbackBtn').addEventListener('click', function(){
+    openModal('反馈建议', '感谢你帮助影像力变得更好。请描述你遇到的问题或建议的改进方向，我们会在核实后持续优化产品体验。');
+  });
+
+  /* 回到顶部 */
+  var topBtn = d.getElementById('yxlTopBtn');
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+
+  /* 数字滚动 */
+  var statEls = d.querySelectorAll('[data-count]');
+  var animated = false;
+  function runCount(){
+    if (animated) return;
+    var trigger = d.querySelector('.yxl-hero-stats');
+    if (!trigger) return;
+    var rect = trigger.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 60) {
+      animated = true;
+      statEls.forEach(function(el){
+        var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+        var start = 0;
+        var step = Math.max(1, Math.floor(target / 46));
+        var timer = setInterval(function(){
+          start += step;
+          if (start >= target) {
+            start = target;
+            clearInterval(timer);
+          }
+          el.textContent = start.toLocaleString('zh-CN');
+        }, 26);
+      });
+    }
+  }
+  window.addEventListener('scroll', runCount);
+  window.addEventListener('load', runCount);
+  runCount();
+})();
+</script>
+</body>
+  </html>
